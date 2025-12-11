@@ -1,3 +1,5 @@
+import RotatingHeadline from '@/components/RotatingHeadline'
+
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-white py-12 sm:py-20 lg:py-24">
@@ -13,12 +15,8 @@ export default function Hero() {
             </span>
           </div>
 
-          {/* Main Headline */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 leading-tight mb-6">
-            We build the systems{' '}
-            <span className="text-blue-600">behind the brand</span>{' '}
-            and the brand that moves the market.
-          </h1>
+          {/* Rotating Headline */}
+          <RotatingHeadline />
 
           {/* Subheadline */}
           <p className="text-2xl sm:text-3xl font-semibold text-gray-700 mb-8">
