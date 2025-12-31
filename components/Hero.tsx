@@ -1,6 +1,31 @@
+'use client'
+
+import { useState } from 'react'
 import RotatingHeadline from '@/components/RotatingHeadline'
+import ClientIntakeForm from '@/components/ClientIntakeForm'
 
 export default function Hero() {
+  const [showForm, setShowForm] = useState(false)
+
+  if (showForm) {
+    return (
+      <section className="relative overflow-hidden bg-white py-12 sm:py-20 lg:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <button
+            onClick={() => setShowForm(false)}
+            className="mb-6 text-gray-600 hover:text-gray-900 flex items-center gap-2"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Back to Home
+          </button>
+          <ClientIntakeForm />
+        </div>
+      </section>
+    )
+  }
+
   return (
     <section className="relative overflow-hidden bg-white py-12 sm:py-20 lg:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,7 +63,10 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-8 py-4 text-base font-semibold text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors">
+            <button 
+              onClick={() => setShowForm(true)}
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-8 py-4 text-base font-semibold text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors"
+            >
               Get Started
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
