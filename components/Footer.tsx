@@ -4,8 +4,17 @@ export default function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
-            <div className="text-2xl font-bold mb-2">Flip.</div>
-            <div className="text-sm text-gray-400 mb-4">A division of SBCI</div>
+            <div className="flex items-center gap-3 mb-4">
+              <img 
+                src="/sbcilogo.png" 
+                alt="SBCI Logo" 
+                className="h-12 w-auto"
+              />
+              <div>
+                <div className="text-2xl font-bold">Flip.</div>
+                <div className="text-sm text-gray-400">A division of SBCI</div>
+              </div>
+            </div>
             <p className="text-sm text-gray-400">
               Full-stack growth and innovation studio.
             </p>
@@ -32,7 +41,6 @@ export default function Footer() {
           <div>
             <h3 className="text-sm font-semibold mb-4">Contact</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Get Started</a></li>
               <li><a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Schedule a Call</a></li>
             </ul>
           </div>
