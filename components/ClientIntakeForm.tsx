@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Script from 'next/script'
 
 interface FormData {
   // Section 0: Opening Frame
@@ -113,6 +114,8 @@ interface FormData {
 
 export default function ClientIntakeForm() {
   const [currentSection, setCurrentSection] = useState(0)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [formData, setFormData] = useState<FormData>({
     openingFrame: false,
     fullName: '',
@@ -201,11 +204,34 @@ export default function ClientIntakeForm() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Form Data:', formData)
-    // Here you would typically send the data to your backend
-    alert('Form submitted! Check console for data.')
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+    
+    try {
+      const response = await fetch('https://curran.app.n8n.cloud/webhook/intake', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json', 
+        },
+        body: JSON.stringify(formData),
+      })
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`)
+      }
+      
+      setSubmitStatus('success')
+      alert('Form submitted successfully! We\'ll be in touch soon.')
+      console.log('Form Data submitted:', formData)
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      setSubmitStatus('error')
+      alert('There was an error submitting the form. Please try again or contact us directly.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   // Conditional logic to determine which sections to show
@@ -1563,9 +1589,10 @@ export default function ClientIntakeForm() {
             ) : (
               <button
                 type="submit"
-                className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+                disabled={isSubmitting}
+                className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Submit Form
+                {isSubmitting ? 'Submitting...' : submitStatus === 'success' ? 'Submitted!' : 'Submit Form'}
               </button>
             )}
           </div>
@@ -1594,6 +1621,14 @@ export default function ClientIntakeForm() {
             })}
           </div>
         </div>
+
+      </div>
+
+      {/* Calendly inline widget */}
+      <div className="mt-12 bg-white rounded-lg shadow-lg p-6 sm:p-8">
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">Schedule a Call</h2>
+        <div className="calendly-inline-widget" data-url="https://calendly.com/advanicurran/30min" style={{ minWidth: '320px', height: '700px' }}></div>
+        <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" />
       </div>
     </div>
   )

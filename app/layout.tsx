@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import LeadCapturePopup from '@/components/LeadCapturePopup'
 
 export const metadata: Metadata = {
   title: 'Flip E-Commerce: Full Stack Growth & Innovation Studio',
@@ -18,7 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <LeadCapturePopup />
+      </body>
     </html>
   )
 }
