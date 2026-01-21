@@ -3,6 +3,7 @@ import Hero from '@/components/Hero'
 import Stats from '@/components/Stats'
 import About from '@/components/About'
 import Services from '@/components/Services'
+import Packages from '@/components/Packages'
 import Clients from '@/components/Clients'
 import WhyChoose from '@/components/WhyChoose'
 import Process from '@/components/Process'
@@ -19,6 +20,7 @@ export default function Home() {
       <Stats />
       <About />
       <Services />
+      <Packages />
       <Clients />
       <WhyChoose />
       <Process />
