@@ -136,11 +136,14 @@ export default function Packages() {
                 </ul>
 
                 {/* CTA Button */}
-                <button
-                  className={`w-full py-4 px-6 rounded-lg font-semibold text-white bg-gradient-to-r ${pkg.gradient} hover:shadow-lg transform transition-all duration-200 hover:scale-105`}
+                <a
+                  href="https://calendly.com/advanicurran/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`block w-full py-4 px-6 rounded-lg font-semibold text-white text-center bg-gradient-to-r ${pkg.gradient} hover:shadow-lg transform transition-all duration-200 hover:scale-105`}
                 >
                   {pkg.cta}
-                </button>
+                </a>
               </div>
             </div>
           ))}
@@ -151,9 +154,14 @@ export default function Packages() {
           <p className="text-gray-600 mb-4">
             Not sure which package is right for you?
           </p>
-          <button className="px-8 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+          <a 
+            href="https://calendly.com/advanicurran/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors"
+          >
             Schedule a Free Consultation
-          </button>
+          </a>
         </div>
 
         {/* Trust Indicators */}
