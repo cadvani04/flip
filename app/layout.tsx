@@ -1,9 +1,17 @@
 import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import LeadCapturePopup from '@/components/LeadCapturePopup'
 
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
 export const metadata: Metadata = {
-  title: 'Flip E-Commerce: Full Stack Growth & Innovation Studio',
+  title: 'Flip — Full-Stack Growth & Innovation Studio',
   description: 'We build the systems behind the brand and the brand that moves the market. Custom software, automation, ERP workflows, brand identity, video production, content editing, and marketing execution in one seamless infrastructure.',
   icons: {
     icon: '/sbcilogo.png',
@@ -18,12 +26,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" className={inter.variable}>
+      <body className="font-sans antialiased">
         {children}
         <LeadCapturePopup />
       </body>
     </html>
   )
 }
-

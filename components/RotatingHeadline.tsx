@@ -2,91 +2,54 @@
 
 import { useState, useEffect } from 'react'
 
+const rotatingPhrases = [
+  'systems behind the brand',
+  'code that powers growth',
+  'technology meets creativity',
+  'apps, brands & movements',
+  'automation meets artistry',
+  'full-stack growth engines',
+  'infrastructure for scale',
+  'the future of commerce',
+]
+
+const finalPhrase = 'the brand that moves the market'
+
 export default function RotatingHeadline() {
-  const rotatingTexts = [
-    'We build systems behind the brand',
-    'Code to content. We architect growth',
-    'Technology meets creativity',
-    'We build apps. We build movements.',
-    'Automation meets artistry',
-    'Full-stack growth. Full-service innovation.',
-    'Engineering excellence. Creative brilliance.',
-    'Complete infrastructure for modern brands.',
-    'Building the future of commerce',
-  ]
-
-  const finalText = 'We build the systems behind the brand and the brand that moves the market.'
-
-  const [currentText, setCurrentText] = useState(rotatingTexts[0])
-  const [isRotating, setIsRotating] = useState(true)
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [isVisible, setIsVisible] = useState(true)
-  const [isAnimating, setIsAnimating] = useState(false)
+  const [index, setIndex] = useState(0)
+  const [done, setDone] = useState(false)
+  const [visible, setVisible] = useState(true)
 
   useEffect(() => {
-    if (!isRotating) {
-      setCurrentText(finalText)
-      return
-    }
+    if (done) return
 
-    // Faster flashier animation
-    const interval = setInterval(() => {
-      setIsAnimating(true)
-      setIsVisible(false)
-      
+    const timer = setInterval(() => {
+      setVisible(false)
       setTimeout(() => {
-        if (currentIndex < rotatingTexts.length - 1) {
-          setCurrentIndex(prev => prev + 1)
-          setCurrentText(rotatingTexts[currentIndex + 1])
+        if (index < rotatingPhrases.length - 1) {
+          setIndex((i) => i + 1)
         } else {
-          // After all rotations, show final text
-          setIsRotating(false)
-          setCurrentText(finalText)
+          setDone(true)
         }
-        setIsVisible(true)
-        setTimeout(() => setIsAnimating(false), 200)
-      }, 100) // Faster transition
-    }, 400) // Much faster rotation (400ms per text)
+        setVisible(true)
+      }, 120)
+    }, 380)
 
-    return () => clearInterval(interval)
-  }, [currentIndex, isRotating])
+    return () => clearInterval(timer)
+  }, [index, done])
 
-  // Render the text with proper highlighting for final text
-  const renderText = () => {
-    if (!isRotating) {
-      // Final text with blue highlight
-      const parts = finalText.split(' ')
-      return parts.map((word, i) => {
-        const isBlue = word === 'behind' || (word === 'brand' && i > 5)
-        return (
-          <span key={i} className={isBlue ? 'text-blue-600' : ''}>
-            {word}{' '}
-          </span>
-        )
-      })
-    }
-    return currentText
-  }
+  const phrase = done ? finalPhrase : rotatingPhrases[index]
 
   return (
-    <h1 className={`text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 leading-tight mb-6 min-h-[200px] sm:min-h-[250px] lg:min-h-[300px] flex items-center justify-center relative`}>
-      <span 
-        className={`text-center inline-block transition-all duration-150 ${
-          isVisible 
-            ? 'opacity-100 scale-100 blur-0' 
-            : 'opacity-0 scale-95 blur-sm'
-        } ${
-          isAnimating && isVisible
-            ? 'animate-pulse-glow'
-            : ''
-        }`}
+    <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tightest text-neutral-950 leading-[1.05] mb-6">
+      <span className="block">We build</span>
+      <span
+        className={`block italic text-neutral-950 transition-opacity duration-100 min-h-[1.1em] ${
+          visible ? 'opacity-100' : 'opacity-0'
+        } ${done ? 'text-neutral-950' : ''}`}
       >
-        {renderText()}
+        {phrase}
       </span>
-      {/* Flash effect overlay */}
-      {isAnimating && isVisible && (
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-200/30 to-transparent animate-flash-sweep pointer-events-none" />
-      )}
     </h1>
   )
 }

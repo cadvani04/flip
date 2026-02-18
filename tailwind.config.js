@@ -7,20 +7,24 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+      },
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
-        primary: {
-          DEFAULT: '#3B82F6',
-          50: '#EFF6FF',
-          100: '#DBEAFE',
-          500: '#3B82F6',
-          600: '#2563EB',
-          700: '#1D4ED8',
+        brand: {
+          50:  '#F7F6F2',
+          100: '#EDEAE0',
+          200: '#D6D0C0',
+          900: '#111111',
+          950: '#0A0A0A',
         },
+      },
+      letterSpacing: {
+        tightest: '-0.04em',
       },
     },
   },
   plugins: [],
 }
-

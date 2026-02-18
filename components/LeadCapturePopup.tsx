@@ -5,44 +5,29 @@ import { useState, useEffect } from 'react'
 export default function LeadCapturePopup() {
   const [isOpen, setIsOpen] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-  })
+  const [formData, setFormData] = useState({ name: '', phone: '', email: '' })
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
   useEffect(() => {
-    // Check if popup has been dismissed before
-    const hasSeenPopup = localStorage.getItem('leadPopupDismissed')
-    
-    // Show popup after 2 seconds if not dismissed before
-    if (!hasSeenPopup) {
-      const timer = setTimeout(() => {
-        setIsOpen(true)
-      }, 2000)
-      return () => clearTimeout(timer)
+    const seen = localStorage.getItem('leadPopupDismissed')
+    if (!seen) {
+      const t = setTimeout(() => setIsOpen(true), 2000)
+      return () => clearTimeout(t)
     }
   }, [])
 
-  const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({
-      ...prev,
-      [field]: value
-    }))
+  const handleInput = (field: string, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }))
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
     setSubmitStatus('idle')
-
     try {
-      const response = await fetch('https://curran.app.n8n.cloud/webhook/intake', {
+      const res = await fetch('https://curran.app.n8n.cloud/webhook/intake', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           leadCapture: true,
           fullName: formData.name,
@@ -52,18 +37,10 @@ export default function LeadCapturePopup() {
           timestamp: new Date().toISOString(),
         }),
       })
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`)
-      }
-
+      if (!res.ok) throw new Error()
       setSubmitStatus('success')
-      // Close popup after successful submission
-      setTimeout(() => {
-        handleClose()
-      }, 1500)
-    } catch (error) {
-      console.error('Error submitting lead:', error)
+      setTimeout(handleClose, 1500)
+    } catch {
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
@@ -72,101 +49,102 @@ export default function LeadCapturePopup() {
 
   const handleClose = () => {
     setIsOpen(false)
-    // Remember that user has seen/dismissed the popup
     localStorage.setItem('leadPopupDismissed', 'true')
   }
 
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4">
-      <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-6 sm:p-8 relative">
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-neutral-950/60 backdrop-blur-sm p-4">
+      <div className="relative w-full max-w-md rounded-2xl bg-white p-8 shadow-2xl">
+        {/* Close */}
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
-          aria-label="Close popup"
+          className="absolute top-4 right-4 rounded-full p-1.5 text-neutral-400 hover:text-neutral-950 hover:bg-neutral-100 transition-colors"
+          aria-label="Close"
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
 
-        <div className="mb-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">Get Started Today</h2>
-          <p className="text-gray-600">Let's connect and see how we can help grow your business.</p>
-        </div>
-
         {submitStatus === 'success' ? (
-          <div className="text-center py-8">
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+          <div className="text-center py-6">
+            <div className="w-12 h-12 rounded-full bg-neutral-950 flex items-center justify-center mx-auto mb-4">
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <p className="text-lg font-semibold text-gray-900">Thank you!</p>
-            <p className="text-gray-600 mt-2">We'll be in touch soon.</p>
+            <p className="text-lg font-bold text-neutral-950 mb-1">You're in!</p>
+            <p className="text-sm text-neutral-500">We'll be in touch soon.</p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                Name *
-              </label>
-              <input
-                type="text"
-                id="name"
-                required
-                value={formData.name}
-                onChange={(e) => handleInputChange('name', e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="Your full name"
-              />
-            </div>
+          <>
+            <p className="text-xs font-semibold uppercase tracking-widest text-neutral-400 mb-2">Get Started</p>
+            <h2 className="text-2xl font-extrabold tracking-tight text-neutral-950 mb-1">Let's build something great.</h2>
+            <p className="text-sm text-neutral-500 mb-6">Leave your details and we'll reach out within 24 hours.</p>
 
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                Email *
-              </label>
-              <input
-                type="email"
-                id="email"
-                required
-                value={formData.email}
-                onChange={(e) => handleInputChange('email', e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="your@email.com"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                Phone Number *
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                required
-                value={formData.phone}
-                onChange={(e) => handleInputChange('phone', e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="(555) 123-4567"
-              />
-            </div>
-
-            {submitStatus === 'error' && (
-              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
-                There was an error submitting your information. Please try again.
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label htmlFor="popup-name" className="block text-xs font-semibold text-neutral-700 mb-1.5">
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  id="popup-name"
+                  required
+                  value={formData.name}
+                  onChange={(e) => handleInput('name', e.target.value)}
+                  className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-sm text-neutral-950 placeholder:text-neutral-400 focus:border-neutral-950 focus:outline-none focus:ring-1 focus:ring-neutral-950 transition-colors"
+                  placeholder="Your full name"
+                />
               </div>
-            )}
 
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {isSubmitting ? 'Submitting...' : 'Get Started'}
-            </button>
-          </form>
+              <div>
+                <label htmlFor="popup-email" className="block text-xs font-semibold text-neutral-700 mb-1.5">
+                  Email Address *
+                </label>
+                <input
+                  type="email"
+                  id="popup-email"
+                  required
+                  value={formData.email}
+                  onChange={(e) => handleInput('email', e.target.value)}
+                  className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-sm text-neutral-950 placeholder:text-neutral-400 focus:border-neutral-950 focus:outline-none focus:ring-1 focus:ring-neutral-950 transition-colors"
+                  placeholder="you@company.com"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="popup-phone" className="block text-xs font-semibold text-neutral-700 mb-1.5">
+                  Phone Number *
+                </label>
+                <input
+                  type="tel"
+                  id="popup-phone"
+                  required
+                  value={formData.phone}
+                  onChange={(e) => handleInput('phone', e.target.value)}
+                  className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-sm text-neutral-950 placeholder:text-neutral-400 focus:border-neutral-950 focus:outline-none focus:ring-1 focus:ring-neutral-950 transition-colors"
+                  placeholder="(555) 123-4567"
+                />
+              </div>
+
+              {submitStatus === 'error' && (
+                <p className="text-xs text-red-600 bg-red-50 border border-red-100 rounded-lg px-4 py-3">
+                  Something went wrong. Please try again or email us directly.
+                </p>
+              )}
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full rounded-full bg-neutral-950 py-3 text-sm font-semibold text-white hover:bg-neutral-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? 'Submitting…' : 'Submit'}
+              </button>
+            </form>
+          </>
         )}
       </div>
     </div>

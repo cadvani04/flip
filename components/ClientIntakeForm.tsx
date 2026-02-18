@@ -359,7 +359,7 @@ export default function ClientIntakeForm() {
       case 0:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900">Opening Frame</h2>
+            <h2 className="text-2xl font-extrabold tracking-tight text-neutral-950">Opening Frame</h2>
             <p className="text-gray-600">
               Thanks for making the time. Today is a diagnostic call - I'm going to ask a structured set of questions so we can understand what's working, what's broken, and what systems will create the biggest lift. I'll pause often so you can add context. Sound good?
             </p>
@@ -368,7 +368,7 @@ export default function ClientIntakeForm() {
                 type="checkbox"
                 checked={formData.openingFrame}
                 onChange={(e) => handleInputChange('openingFrame', e.target.checked.toString())}
-                className="w-4 h-4 text-blue-600"
+                className="w-4 h-4 accent-neutral-950"
               />
               <span>Confirmed</span>
             </label>
@@ -378,78 +378,78 @@ export default function ClientIntakeForm() {
       case 1:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900">Identity & Contact</h2>
+            <h2 className="text-2xl font-extrabold tracking-tight text-neutral-950">Identity & Contact</h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Q1. Full name</label>
+                <label className="block text-xs font-semibold text-neutral-700 mb-1.5">Q1. Full name</label>
                 <input
                   type="text"
                   value={formData.fullName}
                   onChange={(e) => handleInputChange('fullName', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-sm text-neutral-950 placeholder:text-neutral-400 focus:border-neutral-950 focus:outline-none focus:ring-1 focus:ring-neutral-950 transition-colors"
                   placeholder="First, what's your full name?"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Q2. Company / brand name</label>
+                <label className="block text-xs font-semibold text-neutral-700 mb-1.5">Q2. Company / brand name</label>
                 <input
                   type="text"
                   value={formData.companyName}
                   onChange={(e) => handleInputChange('companyName', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-sm text-neutral-950 placeholder:text-neutral-400 focus:border-neutral-950 focus:outline-none focus:ring-1 focus:ring-neutral-950 transition-colors"
                   placeholder="And what's the company or brand name?"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Q3. Role / title</label>
+                <label className="block text-xs font-semibold text-neutral-700 mb-1.5">Q3. Role / title</label>
                 <input
                   type="text"
                   value={formData.role}
                   onChange={(e) => handleInputChange('role', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-sm text-neutral-950 placeholder:text-neutral-400 focus:border-neutral-950 focus:outline-none focus:ring-1 focus:ring-neutral-950 transition-colors"
                   placeholder="What's your role day-to-day?"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Q4. Email</label>
+                <label className="block text-xs font-semibold text-neutral-700 mb-1.5">Q4. Email</label>
                 <input
                   type="email"
                   value={formData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-sm text-neutral-950 placeholder:text-neutral-400 focus:border-neutral-950 focus:outline-none focus:ring-1 focus:ring-neutral-950 transition-colors"
                   placeholder="What's the best email for follow-ups?"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Q5. Phone / WhatsApp</label>
+                <label className="block text-xs font-semibold text-neutral-700 mb-1.5">Q5. Phone / WhatsApp</label>
                 <input
                   type="tel"
                   value={formData.phone}
                   onChange={(e) => handleInputChange('phone', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-sm text-neutral-950 placeholder:text-neutral-400 focus:border-neutral-950 focus:outline-none focus:ring-1 focus:ring-neutral-950 transition-colors"
                   placeholder="And best phone number or WhatsApp?"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Q6. Website</label>
+                <label className="block text-xs font-semibold text-neutral-700 mb-1.5">Q6. Website</label>
                 <input
                   type="url"
                   value={formData.website}
                   onChange={(e) => handleInputChange('website', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-sm text-neutral-950 placeholder:text-neutral-400 focus:border-neutral-950 focus:outline-none focus:ring-1 focus:ring-neutral-950 transition-colors"
                   placeholder="What's your website, if you have one?"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Q7. Social links</label>
-                <p className="text-sm text-gray-600 mb-2">What social channels matter most for you right now?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-1.5">Q7. Social links</label>
+                <p className="text-sm text-neutral-500 mb-2">What social channels matter most for you right now?</p>
                 {['Instagram', 'TikTok', 'YouTube', 'Spotify', 'LinkedIn', 'Other'].map(platform => (
                   <label key={platform} className="flex items-center gap-2 mb-2">
                     <input
                       type="checkbox"
                       checked={formData.socialLinks.includes(platform)}
                       onChange={() => handleCheckboxChange('socialLinks', platform)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{platform}</span>
                   </label>
@@ -462,11 +462,11 @@ export default function ClientIntakeForm() {
       case 2:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900">Business Snapshot & Stage</h2>
+            <h2 className="text-2xl font-extrabold tracking-tight text-neutral-950">Business Snapshot & Stage</h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q8. Business stage</label>
-                <p className="text-sm text-gray-600 mb-3">How would you describe your stage?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q8. Business stage</label>
+                <p className="text-sm text-neutral-500 mb-3">How would you describe your stage?</p>
                 {['Idea', 'Pre-launch', 'Early revenue', 'Scaling', 'Established'].map(stage => (
                   <label key={stage} className="flex items-center gap-2 mb-2">
                     <input
@@ -475,37 +475,37 @@ export default function ClientIntakeForm() {
                       value={stage}
                       checked={formData.businessStage === stage}
                       onChange={(e) => handleInputChange('businessStage', e.target.value)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{stage}</span>
                   </label>
                 ))}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">How long have you been operating?</label>
+                <label className="block text-xs font-semibold text-neutral-700 mb-1.5">How long have you been operating?</label>
                 <input
                   type="text"
                   value={formData.operatingTime}
                   onChange={(e) => handleInputChange('operatingTime', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-sm text-neutral-950 placeholder:text-neutral-400 focus:border-neutral-950 focus:outline-none focus:ring-1 focus:ring-neutral-950 transition-colors"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">What's your current revenue range or target?</label>
+                <label className="block text-xs font-semibold text-neutral-700 mb-1.5">What's your current revenue range or target?</label>
                 <input
                   type="text"
                   value={formData.revenueRange}
                   onChange={(e) => handleInputChange('revenueRange', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-sm text-neutral-950 placeholder:text-neutral-400 focus:border-neutral-950 focus:outline-none focus:ring-1 focus:ring-neutral-950 transition-colors"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">How big is your team today?</label>
+                <label className="block text-xs font-semibold text-neutral-700 mb-1.5">How big is your team today?</label>
                 <input
                   type="text"
                   value={formData.teamSize}
                   onChange={(e) => handleInputChange('teamSize', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-sm text-neutral-950 placeholder:text-neutral-400 focus:border-neutral-950 focus:outline-none focus:ring-1 focus:ring-neutral-950 transition-colors"
                 />
               </div>
             </div>
@@ -515,11 +515,11 @@ export default function ClientIntakeForm() {
       case 3:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900">Primary Problem Diagnosis</h2>
+            <h2 className="text-2xl font-extrabold tracking-tight text-neutral-950">Primary Problem Diagnosis</h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q9. Main challenge (pick top 1–3)</label>
-                <p className="text-sm text-gray-600 mb-3">If we could only fix 1–3 things right now, what are the biggest pain points?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q9. Main challenge (pick top 1–3)</label>
+                <p className="text-sm text-neutral-500 mb-3">If we could only fix 1–3 things right now, what are the biggest pain points?</p>
                 {[
                   'Operations are manual / inefficient',
                   'Leads are inconsistent',
@@ -535,14 +535,14 @@ export default function ClientIntakeForm() {
                       type="checkbox"
                       checked={formData.mainChallenges.includes(challenge)}
                       onChange={() => handleCheckboxChange('mainChallenges', challenge)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{challenge}</span>
                   </label>
                 ))}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Where do you feel the bottleneck shows up first?</label>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Where do you feel the bottleneck shows up first?</label>
                 {['Time', 'Money', 'Workflow'].map(option => (
                   <label key={option} className="flex items-center gap-2 mb-2">
                     <input
@@ -551,7 +551,7 @@ export default function ClientIntakeForm() {
                       value={option}
                       checked={formData.bottleneck === option}
                       onChange={(e) => handleInputChange('bottleneck', e.target.value)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{option}</span>
                   </label>
@@ -564,21 +564,21 @@ export default function ClientIntakeForm() {
       case 4:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900">Operations & Internal Systems</h2>
+            <h2 className="text-2xl font-extrabold tracking-tight text-neutral-950">Operations & Internal Systems</h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Q10. Current internal systems</label>
+                <label className="block text-xs font-semibold text-neutral-700 mb-1.5">Q10. Current internal systems</label>
                 <textarea
                   value={formData.currentSystems}
                   onChange={(e) => handleInputChange('currentSystems', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-sm text-neutral-950 placeholder:text-neutral-400 focus:border-neutral-950 focus:outline-none focus:ring-1 focus:ring-neutral-950 transition-colors"
                   rows={3}
                   placeholder="What systems are you currently using - CRM, ERP, inventory, finance/accounting, project tools, or mostly spreadsheets?"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q11. Broken/slow processes</label>
-                <p className="text-sm text-gray-600 mb-3">What processes feel the most painful or slow?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q11. Broken/slow processes</label>
+                <p className="text-sm text-neutral-500 mb-3">What processes feel the most painful or slow?</p>
                 {[
                   'Client onboarding',
                   'Order fulfillment',
@@ -592,15 +592,15 @@ export default function ClientIntakeForm() {
                       type="checkbox"
                       checked={formData.brokenProcesses.includes(process)}
                       onChange={() => handleCheckboxChange('brokenProcesses', process)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{process}</span>
                   </label>
                 ))}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q12. Interest areas</label>
-                <p className="text-sm text-gray-600 mb-3">Would you want us to build or improve any of these?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q12. Interest areas</label>
+                <p className="text-sm text-neutral-500 mb-3">Would you want us to build or improve any of these?</p>
                 {[
                   'Custom ERP',
                   'CRM optimization',
@@ -613,7 +613,7 @@ export default function ClientIntakeForm() {
                       type="checkbox"
                       checked={formData.interestAreas.includes(area)}
                       onChange={() => handleCheckboxChange('interestAreas', area)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{area}</span>
                   </label>
@@ -626,21 +626,21 @@ export default function ClientIntakeForm() {
       case 5:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900">Automations</h2>
+            <h2 className="text-2xl font-extrabold tracking-tight text-neutral-950">Automations</h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Q13. Current automations</label>
+                <label className="block text-xs font-semibold text-neutral-700 mb-1.5">Q13. Current automations</label>
                 <textarea
                   value={formData.currentAutomations}
                   onChange={(e) => handleInputChange('currentAutomations', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-sm text-neutral-950 placeholder:text-neutral-400 focus:border-neutral-950 focus:outline-none focus:ring-1 focus:ring-neutral-950 transition-colors"
                   rows={3}
                   placeholder="Do you have any automations running today - email sequences, SMS/WhatsApp, chatbots, or anything AI-driven?"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q14. What they want automated</label>
-                <p className="text-sm text-gray-600 mb-3">What would you love to stop doing manually?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q14. What they want automated</label>
+                <p className="text-sm text-neutral-500 mb-3">What would you love to stop doing manually?</p>
                 {[
                   'Lead follow-ups',
                   'Appointment booking',
@@ -654,7 +654,7 @@ export default function ClientIntakeForm() {
                       type="checkbox"
                       checked={formData.wantAutomated.includes(item)}
                       onChange={() => handleCheckboxChange('wantAutomated', item)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{item}</span>
                   </label>
@@ -667,11 +667,11 @@ export default function ClientIntakeForm() {
       case 6:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900">AI Agents & Agentic Systems</h2>
+            <h2 className="text-2xl font-extrabold tracking-tight text-neutral-950">AI Agents & Agentic Systems</h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q15. Openness to AI agents</label>
-                <p className="text-sm text-gray-600 mb-3">How open are you to AI agents handling parts of the business?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q15. Openness to AI agents</label>
+                <p className="text-sm text-neutral-500 mb-3">How open are you to AI agents handling parts of the business?</p>
                 {['Yes - fully autonomous', 'Yes - supervised', 'Not sure / want guidance'].map(option => (
                   <label key={option} className="flex items-center gap-2 mb-2">
                     <input
@@ -680,14 +680,14 @@ export default function ClientIntakeForm() {
                       value={option}
                       checked={formData.aiOpenness === option}
                       onChange={(e) => handleInputChange('aiOpenness', e.target.value)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{option}</span>
                   </label>
                 ))}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">If an agent could reliably handle one area first, what would you choose?</label>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">If an agent could reliably handle one area first, what would you choose?</label>
                 {['Sales', 'Support', 'Operations', 'Content', 'Reporting'].map(area => (
                   <label key={area} className="flex items-center gap-2 mb-2">
                     <input
@@ -696,7 +696,7 @@ export default function ClientIntakeForm() {
                       value={area}
                       checked={formData.aiFirstArea === area}
                       onChange={(e) => handleInputChange('aiFirstArea', e.target.value)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{area}</span>
                   </label>
@@ -709,26 +709,26 @@ export default function ClientIntakeForm() {
       case 7:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900">Acquisition & Funnel Systems</h2>
+            <h2 className="text-2xl font-extrabold tracking-tight text-neutral-950">Acquisition & Funnel Systems</h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q16. Current discovery channels</label>
-                <p className="text-sm text-gray-600 mb-3">How do customers find you today?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q16. Current discovery channels</label>
+                <p className="text-sm text-neutral-500 mb-3">How do customers find you today?</p>
                 {['Organic social', 'Paid ads', 'Influencers', 'Referrals', 'Cold outreach', 'Other'].map(channel => (
                   <label key={channel} className="flex items-center gap-2 mb-2">
                     <input
                       type="checkbox"
                       checked={formData.discoveryChannels.includes(channel)}
                       onChange={() => handleCheckboxChange('discoveryChannels', channel)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{channel}</span>
                   </label>
                 ))}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q17. Funnel components needed</label>
-                <p className="text-sm text-gray-600 mb-3">Which parts of the funnel do you need built or improved?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q17. Funnel components needed</label>
+                <p className="text-sm text-neutral-500 mb-3">Which parts of the funnel do you need built or improved?</p>
                 {[
                   'Landing pages',
                   'Influencer sourcing & tracking',
@@ -742,15 +742,15 @@ export default function ClientIntakeForm() {
                       type="checkbox"
                       checked={formData.funnelComponents.includes(component)}
                       onChange={() => handleCheckboxChange('funnelComponents', component)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{component}</span>
                   </label>
                 ))}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q18. Ad spend</label>
-                <p className="text-sm text-gray-600 mb-3">What's your monthly ad spend right now - or planned?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q18. Ad spend</label>
+                <p className="text-sm text-neutral-500 mb-3">What's your monthly ad spend right now - or planned?</p>
                 {['$0–$1k', '$1k–$10k', '$10k+', 'Not sure yet'].map(range => (
                   <label key={range} className="flex items-center gap-2 mb-2">
                     <input
@@ -759,7 +759,7 @@ export default function ClientIntakeForm() {
                       value={range}
                       checked={formData.adSpend === range}
                       onChange={(e) => handleInputChange('adSpend', e.target.value)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{range}</span>
                   </label>
@@ -772,33 +772,33 @@ export default function ClientIntakeForm() {
       case 8:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900">Content Output & Distribution</h2>
+            <h2 className="text-2xl font-extrabold tracking-tight text-neutral-950">Content Output & Distribution</h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q19. Content types</label>
-                <p className="text-sm text-gray-600 mb-3">What content do you produce today?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q19. Content types</label>
+                <p className="text-sm text-neutral-500 mb-3">What content do you produce today?</p>
                 {['Short-form (Reels/TikTok)', 'Long-form (YouTube/Podcast)', 'Ads', 'Educational', 'None consistently'].map(type => (
                   <label key={type} className="flex items-center gap-2 mb-2">
                     <input
                       type="checkbox"
                       checked={formData.contentTypes.includes(type)}
                       onChange={() => handleCheckboxChange('contentTypes', type)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{type}</span>
                   </label>
                 ))}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q20. Publishing platforms</label>
-                <p className="text-sm text-gray-600 mb-3">Where are you publishing?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q20. Publishing platforms</label>
+                <p className="text-sm text-neutral-500 mb-3">Where are you publishing?</p>
                 {['Instagram', 'TikTok', 'YouTube', 'Spotify/Podcast', 'Website', 'LinkedIn', 'Other'].map(platform => (
                   <label key={platform} className="flex items-center gap-2 mb-2">
                     <input
                       type="checkbox"
                       checked={formData.publishingPlatforms.includes(platform)}
                       onChange={() => handleCheckboxChange('publishingPlatforms', platform)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{platform}</span>
                   </label>
@@ -811,11 +811,11 @@ export default function ClientIntakeForm() {
       case 9:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900">Content Systems & Creative Services</h2>
+            <h2 className="text-2xl font-extrabold tracking-tight text-neutral-950">Content Systems & Creative Services</h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q21. What they need help with</label>
-                <p className="text-sm text-gray-600 mb-3">What would help most on the content side?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q21. What they need help with</label>
+                <p className="text-sm text-neutral-500 mb-3">What would help most on the content side?</p>
                 {[
                   'Content strategy & calendars',
                   'Filming / production optimization',
@@ -829,18 +829,18 @@ export default function ClientIntakeForm() {
                       type="checkbox"
                       checked={formData.contentHelp.includes(help)}
                       onChange={() => handleCheckboxChange('contentHelp', help)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{help}</span>
                   </label>
                 ))}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Do you want a done-for-you content machine, or a system your team can run?</label>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Do you want a done-for-you content machine, or a system your team can run?</label>
                 <textarea
                   value={formData.contentApproach}
                   onChange={(e) => handleInputChange('contentApproach', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-sm text-neutral-950 placeholder:text-neutral-400 focus:border-neutral-950 focus:outline-none focus:ring-1 focus:ring-neutral-950 transition-colors"
                   rows={3}
                 />
               </div>
@@ -851,11 +851,11 @@ export default function ClientIntakeForm() {
       case 10:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900">Technical Builds & Complex Work</h2>
+            <h2 className="text-2xl font-extrabold tracking-tight text-neutral-950">Technical Builds & Complex Work</h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q22. Technical needs</label>
-                <p className="text-sm text-gray-600 mb-3">Do you need any technical build work?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q22. Technical needs</label>
+                <p className="text-sm text-neutral-500 mb-3">Do you need any technical build work?</p>
                 {[
                   'Custom software or app',
                   'API integrations',
@@ -869,18 +869,18 @@ export default function ClientIntakeForm() {
                       type="checkbox"
                       checked={formData.technicalNeeds.includes(need)}
                       onChange={() => handleCheckboxChange('technicalNeeds', need)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{need}</span>
                   </label>
                 ))}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Q23. Describe the hard problem</label>
+                <label className="block text-xs font-semibold text-neutral-700 mb-1.5">Q23. Describe the hard problem</label>
                 <textarea
                   value={formData.hardProblem}
                   onChange={(e) => handleInputChange('hardProblem', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-sm text-neutral-950 placeholder:text-neutral-400 focus:border-neutral-950 focus:outline-none focus:ring-1 focus:ring-neutral-950 transition-colors"
                   rows={5}
                   placeholder="What's the most technical or complex task you're trying to solve right now? Even if it's messy or hard to explain - go for it."
                 />
@@ -892,24 +892,24 @@ export default function ClientIntakeForm() {
       case 11:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900">Engagement Type & Success Definition</h2>
+            <h2 className="text-2xl font-extrabold tracking-tight text-neutral-950">Engagement Type & Success Definition</h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q24. What they're looking for</label>
-                <p className="text-sm text-gray-600 mb-3">Are you looking for a one-time audit, ongoing consulting, a full build + execution team, or advisory only?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q24. What they're looking for</label>
+                <p className="text-sm text-neutral-500 mb-3">Are you looking for a one-time audit, ongoing consulting, a full build + execution team, or advisory only?</p>
                 <textarea
                   value={formData.engagementType}
                   onChange={(e) => handleInputChange('engagementType', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-sm text-neutral-950 placeholder:text-neutral-400 focus:border-neutral-950 focus:outline-none focus:ring-1 focus:ring-neutral-950 transition-colors"
                   rows={3}
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Q25. 90-day success</label>
+                <label className="block text-xs font-semibold text-neutral-700 mb-1.5">Q25. 90-day success</label>
                 <textarea
                   value={formData.success90Days}
                   onChange={(e) => handleInputChange('success90Days', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-sm text-neutral-950 placeholder:text-neutral-400 focus:border-neutral-950 focus:outline-none focus:ring-1 focus:ring-neutral-950 transition-colors"
                   rows={4}
                   placeholder="If this partnership goes well, what does success look like in 90 days?"
                 />
@@ -921,11 +921,11 @@ export default function ClientIntakeForm() {
       case 12:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900">Budget, Timeline, Decision Authority</h2>
+            <h2 className="text-2xl font-extrabold tracking-tight text-neutral-950">Budget, Timeline, Decision Authority</h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q26. Budget range</label>
-                <p className="text-sm text-gray-600 mb-3">What budget range are you comfortable with for this?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q26. Budget range</label>
+                <p className="text-sm text-neutral-500 mb-3">What budget range are you comfortable with for this?</p>
                 {['Under $2k', '$2k–$5k', '$5k–$15k', '$15k+', 'Depends on scope'].map(range => (
                   <label key={range} className="flex items-center gap-2 mb-2">
                     <input
@@ -934,15 +934,15 @@ export default function ClientIntakeForm() {
                       value={range}
                       checked={formData.budgetRange === range}
                       onChange={(e) => handleInputChange('budgetRange', e.target.value)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{range}</span>
                   </label>
                 ))}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q27. Timeline</label>
-                <p className="text-sm text-gray-600 mb-3">When do you want to start?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q27. Timeline</label>
+                <p className="text-sm text-neutral-500 mb-3">When do you want to start?</p>
                 {['ASAP', 'Within 30 days', '60+ days'].map(option => (
                   <label key={option} className="flex items-center gap-2 mb-2">
                     <input
@@ -951,15 +951,15 @@ export default function ClientIntakeForm() {
                       value={option}
                       checked={formData.timeline === option}
                       onChange={(e) => handleInputChange('timeline', e.target.value)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{option}</span>
                   </label>
                 ))}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q28. Decision maker</label>
-                <p className="text-sm text-gray-600 mb-3">Who makes the final decision?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q28. Decision maker</label>
+                <p className="text-sm text-neutral-500 mb-3">Who makes the final decision?</p>
                 {['Me', 'Partner', 'Board / team'].map(option => (
                   <label key={option} className="flex items-center gap-2 mb-2">
                     <input
@@ -968,7 +968,7 @@ export default function ClientIntakeForm() {
                       value={option}
                       checked={formData.decisionMaker === option}
                       onChange={(e) => handleInputChange('decisionMaker', e.target.value)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{option}</span>
                   </label>
@@ -981,24 +981,24 @@ export default function ClientIntakeForm() {
       case 13:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900">Fit, Motivation, Context</h2>
+            <h2 className="text-2xl font-extrabold tracking-tight text-neutral-950">Fit, Motivation, Context</h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Q29. Why Flip Commerce / SBCI</label>
+                <label className="block text-xs font-semibold text-neutral-700 mb-1.5">Q29. Why Flip Commerce / SBCI</label>
                 <textarea
                   value={formData.whyFlip}
                   onChange={(e) => handleInputChange('whyFlip', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-sm text-neutral-950 placeholder:text-neutral-400 focus:border-neutral-950 focus:outline-none focus:ring-1 focus:ring-neutral-950 transition-colors"
                   rows={4}
                   placeholder="What made you want to work with us specifically?"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Q30. Anything else</label>
+                <label className="block text-xs font-semibold text-neutral-700 mb-1.5">Q30. Anything else</label>
                 <textarea
                   value={formData.anythingElse}
                   onChange={(e) => handleInputChange('anythingElse', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-sm text-neutral-950 placeholder:text-neutral-400 focus:border-neutral-950 focus:outline-none focus:ring-1 focus:ring-neutral-950 transition-colors"
                   rows={4}
                   placeholder="What else should we know that would help us scope this right?"
                 />
@@ -1010,11 +1010,11 @@ export default function ClientIntakeForm() {
       case 14:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900">Business Model & Constraints</h2>
+            <h2 className="text-2xl font-extrabold tracking-tight text-neutral-950">Business Model & Constraints</h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q31. Business model</label>
-                <p className="text-sm text-gray-600 mb-3">Which describes your model best?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q31. Business model</label>
+                <p className="text-sm text-neutral-500 mb-3">Which describes your model best?</p>
                 {['B2B', 'B2C', 'Marketplace', 'Subscription / SaaS', 'Agency / Services', 'E-commerce', 'Hybrid'].map(model => (
                   <label key={model} className="flex items-center gap-2 mb-2">
                     <input
@@ -1023,15 +1023,15 @@ export default function ClientIntakeForm() {
                       value={model}
                       checked={formData.businessModel === model}
                       onChange={(e) => handleInputChange('businessModel', e.target.value)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{model}</span>
                   </label>
                 ))}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q32. Revenue streams</label>
-                <p className="text-sm text-gray-600 mb-3">Where does revenue come from today?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q32. Revenue streams</label>
+                <p className="text-sm text-neutral-500 mb-3">Where does revenue come from today?</p>
                 {[
                   'Product sales',
                   'Subscriptions',
@@ -1045,15 +1045,15 @@ export default function ClientIntakeForm() {
                       type="checkbox"
                       checked={formData.revenueStreams.includes(stream)}
                       onChange={() => handleCheckboxChange('revenueStreams', stream)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{stream}</span>
                   </label>
                 ))}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q33. Primary constraints</label>
-                <p className="text-sm text-gray-600 mb-3">What's the main constraint right now?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q33. Primary constraints</label>
+                <p className="text-sm text-neutral-500 mb-3">What's the main constraint right now?</p>
                 {['Time', 'Capital', 'Team bandwidth', 'Technical complexity', 'Lack of clarity', 'Execution speed'].map(constraint => (
                   <label key={constraint} className="flex items-center gap-2 mb-2">
                     <input
@@ -1062,7 +1062,7 @@ export default function ClientIntakeForm() {
                       value={constraint}
                       checked={formData.primaryConstraint === constraint}
                       onChange={(e) => handleInputChange('primaryConstraint', e.target.value)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{constraint}</span>
                   </label>
@@ -1075,21 +1075,21 @@ export default function ClientIntakeForm() {
       case 15:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900">Tech Stack, Data, Infrastructure</h2>
+            <h2 className="text-2xl font-extrabold tracking-tight text-neutral-950">Tech Stack, Data, Infrastructure</h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Q34. Current tools</label>
+                <label className="block text-xs font-semibold text-neutral-700 mb-1.5">Q34. Current tools</label>
                 <textarea
                   value={formData.currentTools}
                   onChange={(e) => handleInputChange('currentTools', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-sm text-neutral-950 placeholder:text-neutral-400 focus:border-neutral-950 focus:outline-none focus:ring-1 focus:ring-neutral-950 transition-colors"
                   rows={4}
                   placeholder="What tools are in your stack right now? (CRM, email, payments, scheduling, fulfillment, analytics, project mgmt, etc.)"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q35. Data location</label>
-                <p className="text-sm text-gray-600 mb-3">Where does your data live today?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q35. Data location</label>
+                <p className="text-sm text-neutral-500 mb-3">Where does your data live today?</p>
                 {['Spreadsheets', 'CRM', 'Multiple disconnected tools', 'Nowhere centralized'].map(location => (
                   <label key={location} className="flex items-center gap-2 mb-2">
                     <input
@@ -1098,15 +1098,15 @@ export default function ClientIntakeForm() {
                       value={location}
                       checked={formData.dataLocation === location}
                       onChange={(e) => handleInputChange('dataLocation', e.target.value)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{location}</span>
                   </label>
                 ))}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q36. Infra / systems help</label>
-                <p className="text-sm text-gray-600 mb-3">Do you need help with any of the following?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q36. Infra / systems help</label>
+                <p className="text-sm text-neutral-500 mb-3">Do you need help with any of the following?</p>
                 {[
                   'Stack consolidation',
                   'Data migration',
@@ -1119,7 +1119,7 @@ export default function ClientIntakeForm() {
                       type="checkbox"
                       checked={formData.infraHelp.includes(help)}
                       onChange={() => handleCheckboxChange('infraHelp', help)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{help}</span>
                   </label>
@@ -1132,11 +1132,11 @@ export default function ClientIntakeForm() {
       case 16:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900">AI Depth & Direction</h2>
+            <h2 className="text-2xl font-extrabold tracking-tight text-neutral-950">AI Depth & Direction</h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q37. Current AI usage</label>
-                <p className="text-sm text-gray-600 mb-3">Are you using AI today?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q37. Current AI usage</label>
+                <p className="text-sm text-neutral-500 mb-3">Are you using AI today?</p>
                 {['No', 'Yes (basic tools like ChatGPT)', 'Yes (custom/integrated systems)'].map(usage => (
                   <label key={usage} className="flex items-center gap-2 mb-2">
                     <input
@@ -1145,15 +1145,15 @@ export default function ClientIntakeForm() {
                       value={usage}
                       checked={formData.currentAiUsage === usage}
                       onChange={(e) => handleInputChange('currentAiUsage', e.target.value)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{usage}</span>
                   </label>
                 ))}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q38. AI services interest</label>
-                <p className="text-sm text-gray-600 mb-3">Which AI systems would be valuable?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q38. AI services interest</label>
+                <p className="text-sm text-neutral-500 mb-3">Which AI systems would be valuable?</p>
                 {[
                   'Custom AI agents (sales/ops/support)',
                   'Internal copilots',
@@ -1167,18 +1167,18 @@ export default function ClientIntakeForm() {
                       type="checkbox"
                       checked={formData.aiServicesInterest.includes(service)}
                       onChange={() => handleCheckboxChange('aiServicesInterest', service)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{service}</span>
                   </label>
                 ))}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Q39. AI operating mode</label>
+                <label className="block text-xs font-semibold text-neutral-700 mb-1.5">Q39. AI operating mode</label>
                 <textarea
                   value={formData.aiOperatingMode}
                   onChange={(e) => handleInputChange('aiOperatingMode', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-sm text-neutral-950 placeholder:text-neutral-400 focus:border-neutral-950 focus:outline-none focus:ring-1 focus:ring-neutral-950 transition-colors"
                   rows={3}
                   placeholder="Should AI replace tasks, assist humans, or a hybrid?"
                 />
@@ -1190,11 +1190,11 @@ export default function ClientIntakeForm() {
       case 17:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900">Brand, Messaging, Positioning</h2>
+            <h2 className="text-2xl font-extrabold tracking-tight text-neutral-950">Brand, Messaging, Positioning</h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q40. Brand clarity</label>
-                <p className="text-sm text-gray-600 mb-3">Do you feel your brand identity is clearly defined?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q40. Brand clarity</label>
+                <p className="text-sm text-neutral-500 mb-3">Do you feel your brand identity is clearly defined?</p>
                 {['Yes', 'Somewhat', 'No'].map(option => (
                   <label key={option} className="flex items-center gap-2 mb-2">
                     <input
@@ -1203,15 +1203,15 @@ export default function ClientIntakeForm() {
                       value={option}
                       checked={formData.brandClarity === option}
                       onChange={(e) => handleInputChange('brandClarity', e.target.value)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{option}</span>
                   </label>
                 ))}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q41. Brand support needed</label>
-                <p className="text-sm text-gray-600 mb-3">Do you need help with any of this?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q41. Brand support needed</label>
+                <p className="text-sm text-neutral-500 mb-3">Do you need help with any of this?</p>
                 {[
                   'Brand strategy & messaging',
                   'Visual identity',
@@ -1224,7 +1224,7 @@ export default function ClientIntakeForm() {
                       type="checkbox"
                       checked={formData.brandSupport.includes(support)}
                       onChange={() => handleCheckboxChange('brandSupport', support)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{support}</span>
                   </label>
@@ -1237,11 +1237,11 @@ export default function ClientIntakeForm() {
       case 18:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900">Filming & Production Optimization</h2>
+            <h2 className="text-2xl font-extrabold tracking-tight text-neutral-950">Filming & Production Optimization</h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q42. In-house filming</label>
-                <p className="text-sm text-gray-600 mb-3">Do you film in-house?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q42. In-house filming</label>
+                <p className="text-sm text-neutral-500 mb-3">Do you film in-house?</p>
                 {['Yes', 'No', 'Occasionally'].map(option => (
                   <label key={option} className="flex items-center gap-2 mb-2">
                     <input
@@ -1250,30 +1250,30 @@ export default function ClientIntakeForm() {
                       value={option}
                       checked={formData.inHouseFilming === option}
                       onChange={(e) => handleInputChange('inHouseFilming', e.target.value)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{option}</span>
                   </label>
                 ))}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q43. Filming locations</label>
-                <p className="text-sm text-gray-600 mb-3">Where do you typically film?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q43. Filming locations</label>
+                <p className="text-sm text-neutral-500 mb-3">Where do you typically film?</p>
                 {['Office', 'Studio', 'Home', 'On-site / field'].map(location => (
                   <label key={location} className="flex items-center gap-2 mb-2">
                     <input
                       type="checkbox"
                       checked={formData.filmingLocations.includes(location)}
                       onChange={() => handleCheckboxChange('filmingLocations', location)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{location}</span>
                   </label>
                 ))}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q44. Production audit</label>
-                <p className="text-sm text-gray-600 mb-3">Would you want an audit of any of these?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q44. Production audit</label>
+                <p className="text-sm text-neutral-500 mb-3">Would you want an audit of any of these?</p>
                 {[
                   'Camera setup',
                   'Lighting',
@@ -1286,18 +1286,18 @@ export default function ClientIntakeForm() {
                       type="checkbox"
                       checked={formData.productionAudit.includes(audit)}
                       onChange={() => handleCheckboxChange('productionAudit', audit)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{audit}</span>
                   </label>
                 ))}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Q45. Production systems</label>
+                <label className="block text-xs font-semibold text-neutral-700 mb-1.5">Q45. Production systems</label>
                 <textarea
                   value={formData.productionSystems}
                   onChange={(e) => handleInputChange('productionSystems', e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-2.5 text-sm text-neutral-950 placeholder:text-neutral-400 focus:border-neutral-950 focus:outline-none focus:ring-1 focus:ring-neutral-950 transition-colors"
                   rows={3}
                   placeholder="Are you interested in building systems like: filming SOPs, batching workflows, creator playbooks, or remote editing pipelines?"
                 />
@@ -1309,11 +1309,11 @@ export default function ClientIntakeForm() {
       case 19:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900">Social Media Systems</h2>
+            <h2 className="text-2xl font-extrabold tracking-tight text-neutral-950">Social Media Systems</h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q46. What's broken on social</label>
-                <p className="text-sm text-gray-600 mb-3">What feels broken about social media right now?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q46. What's broken on social</label>
+                <p className="text-sm text-neutral-500 mb-3">What feels broken about social media right now?</p>
                 {[
                   'Inconsistent posting',
                   'Low engagement',
@@ -1326,15 +1326,15 @@ export default function ClientIntakeForm() {
                       type="checkbox"
                       checked={formData.socialBroken.includes(issue)}
                       onChange={() => handleCheckboxChange('socialBroken', issue)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{issue}</span>
                   </label>
                 ))}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q47. Systems they want</label>
-                <p className="text-sm text-gray-600 mb-3">Which systems do you want built?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q47. Systems they want</label>
+                <p className="text-sm text-neutral-500 mb-3">Which systems do you want built?</p>
                 {[
                   'Content calendars',
                   'Automation pipelines',
@@ -1347,7 +1347,7 @@ export default function ClientIntakeForm() {
                       type="checkbox"
                       checked={formData.socialSystems.includes(system)}
                       onChange={() => handleCheckboxChange('socialSystems', system)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{system}</span>
                   </label>
@@ -1360,11 +1360,11 @@ export default function ClientIntakeForm() {
       case 20:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900">Podcast / Spotify / Long-Form Expansion</h2>
+            <h2 className="text-2xl font-extrabold tracking-tight text-neutral-950">Podcast / Spotify / Long-Form Expansion</h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q48. Podcast plans</label>
-                <p className="text-sm text-gray-600 mb-3">Do you have or plan to launch a podcast or long-form series?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q48. Podcast plans</label>
+                <p className="text-sm text-neutral-500 mb-3">Do you have or plan to launch a podcast or long-form series?</p>
                 {['Yes', 'No', 'Planning'].map(option => (
                   <label key={option} className="flex items-center gap-2 mb-2">
                     <input
@@ -1373,15 +1373,15 @@ export default function ClientIntakeForm() {
                       value={option}
                       checked={formData.podcastPlans === option}
                       onChange={(e) => handleInputChange('podcastPlans', e.target.value)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{option}</span>
                   </label>
                 ))}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q49. Podcast support</label>
-                <p className="text-sm text-gray-600 mb-3">What support would you need?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q49. Podcast support</label>
+                <p className="text-sm text-neutral-500 mb-3">What support would you need?</p>
                 {[
                   'Concept & format',
                   'Recording setup',
@@ -1394,7 +1394,7 @@ export default function ClientIntakeForm() {
                       type="checkbox"
                       checked={formData.podcastSupport.includes(support)}
                       onChange={() => handleCheckboxChange('podcastSupport', support)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{support}</span>
                   </label>
@@ -1407,11 +1407,11 @@ export default function ClientIntakeForm() {
       case 21:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900">Monetization & Revenue Optimization</h2>
+            <h2 className="text-2xl font-extrabold tracking-tight text-neutral-950">Monetization & Revenue Optimization</h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q50. Conversion tracking</label>
-                <p className="text-sm text-gray-600 mb-3">Are you tracking conversions accurately today?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q50. Conversion tracking</label>
+                <p className="text-sm text-neutral-500 mb-3">Are you tracking conversions accurately today?</p>
                 {['Yes', 'Somewhat', 'No'].map(option => (
                   <label key={option} className="flex items-center gap-2 mb-2">
                     <input
@@ -1420,15 +1420,15 @@ export default function ClientIntakeForm() {
                       value={option}
                       checked={formData.conversionTracking === option}
                       onChange={(e) => handleInputChange('conversionTracking', e.target.value)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{option}</span>
                   </label>
                 ))}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q51. Revenue optimization help</label>
-                <p className="text-sm text-gray-600 mb-3">Do you need help with any of these?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q51. Revenue optimization help</label>
+                <p className="text-sm text-neutral-500 mb-3">Do you need help with any of these?</p>
                 {[
                   'Pricing strategy',
                   'Offer creation',
@@ -1441,7 +1441,7 @@ export default function ClientIntakeForm() {
                       type="checkbox"
                       checked={formData.revenueOptimization.includes(help)}
                       onChange={() => handleCheckboxChange('revenueOptimization', help)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{help}</span>
                   </label>
@@ -1454,11 +1454,11 @@ export default function ClientIntakeForm() {
       case 22:
         return (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900">Team & Scale Readiness</h2>
+            <h2 className="text-2xl font-extrabold tracking-tight text-neutral-950">Team & Scale Readiness</h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q52. Team size</label>
-                <p className="text-sm text-gray-600 mb-3">What's your team size?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q52. Team size</label>
+                <p className="text-sm text-neutral-500 mb-3">What's your team size?</p>
                 {['Solo', '2–5', '6–15', '15+'].map(size => (
                   <label key={size} className="flex items-center gap-2 mb-2">
                     <input
@@ -1467,30 +1467,30 @@ export default function ClientIntakeForm() {
                       value={size}
                       checked={formData.teamSizeFinal === size}
                       onChange={(e) => handleInputChange('teamSizeFinal', e.target.value)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{size}</span>
                   </label>
                 ))}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q53. What helps team most</label>
-                <p className="text-sm text-gray-600 mb-3">What would help the team most right now?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q53. What helps team most</label>
+                <p className="text-sm text-neutral-500 mb-3">What would help the team most right now?</p>
                 {['Automation', 'SOPs', 'Dashboards', 'Better tools', 'Hiring support'].map(help => (
                   <label key={help} className="flex items-center gap-2 mb-2">
                     <input
                       type="checkbox"
                       checked={formData.teamHelp.includes(help)}
                       onChange={() => handleCheckboxChange('teamHelp', help)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{help}</span>
                   </label>
                 ))}
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Q54. Scaling plans</label>
-                <p className="text-sm text-gray-600 mb-3">Are you planning to scale in the next 6–12 months?</p>
+                <label className="block text-xs font-semibold text-neutral-700 mb-2">Q54. Scaling plans</label>
+                <p className="text-sm text-neutral-500 mb-3">Are you planning to scale in the next 6–12 months?</p>
                 {['Yes', 'No', 'Unsure'].map(option => (
                   <label key={option} className="flex items-center gap-2 mb-2">
                     <input
@@ -1499,7 +1499,7 @@ export default function ClientIntakeForm() {
                       value={option}
                       checked={formData.scalingPlans === option}
                       onChange={(e) => handleInputChange('scalingPlans', e.target.value)}
-                      className="w-4 h-4 text-blue-600"
+                      className="w-4 h-4 accent-neutral-950"
                     />
                     <span>{option}</span>
                   </label>
@@ -1541,19 +1541,20 @@ export default function ClientIntakeForm() {
   ]
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8">
+    <div className="max-w-4xl mx-auto">
+      <div className="rounded-2xl border border-neutral-200 bg-white p-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Client Intake Diagnostic Form</h1>
-          <p className="text-gray-600">Complete all sections to provide a comprehensive overview of your business needs.</p>
-            <div className="mt-4">
-            <div className="flex justify-between text-sm text-gray-600 mb-2">
+          <p className="text-xs font-semibold uppercase tracking-widest text-neutral-400 mb-2">Client Intake</p>
+          <h1 className="text-3xl font-extrabold tracking-tight text-neutral-950 mb-2">Diagnostic Form</h1>
+          <p className="text-neutral-500 text-sm">Complete all sections so we can build the right system for your business.</p>
+          <div className="mt-5">
+            <div className="flex justify-between text-xs text-neutral-500 mb-2 font-medium">
               <span>Progress</span>
               <span>{currentVisibleIndex + 1} of {visibleSections.length} sections</span>
             </div>
-            <div className="w-full bg-gray-200 rounded-full h-2">
+            <div className="w-full bg-neutral-100 rounded-full h-1.5">
               <div
-                className="bg-blue-600 h-2 rounded-full transition-all duration-300"
+                className="bg-neutral-950 h-1.5 rounded-full transition-all duration-300"
                 style={{ width: `${((currentVisibleIndex + 1) / visibleSections.length) * 100}%` }}
               />
             </div>
@@ -1563,7 +1564,7 @@ export default function ClientIntakeForm() {
         <form onSubmit={handleSubmit} className="space-y-6">
           {renderSection()}
 
-          <div className="flex justify-between pt-6 border-t border-gray-200">
+          <div className="flex justify-between pt-6 border-t border-neutral-100">
             <button
               type="button"
               onClick={() => {
@@ -1571,7 +1572,7 @@ export default function ClientIntakeForm() {
                 setCurrentSection(visibleSections[prevIndex] || 0)
               }}
               disabled={currentVisibleIndex === 0}
-              className="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="rounded-full border border-neutral-200 px-6 py-2.5 text-sm font-semibold text-neutral-700 hover:bg-neutral-50 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
             >
               Previous
             </button>
@@ -1582,7 +1583,7 @@ export default function ClientIntakeForm() {
                   const nextIndex = Math.min(visibleSections.length - 1, currentVisibleIndex + 1)
                   setCurrentSection(visibleSections[nextIndex] || totalSections - 1)
                 }}
-                className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                className="rounded-full bg-neutral-950 px-6 py-2.5 text-sm font-semibold text-white hover:bg-neutral-800 transition-colors"
               >
                 Next
               </button>
@@ -1590,17 +1591,17 @@ export default function ClientIntakeForm() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="rounded-full bg-neutral-950 px-6 py-2.5 text-sm font-semibold text-white hover:bg-neutral-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? 'Submitting...' : submitStatus === 'success' ? 'Submitted!' : 'Submit Form'}
+                {isSubmitting ? 'Submitting…' : submitStatus === 'success' ? 'Submitted!' : 'Submit Form'}
               </button>
             )}
           </div>
         </form>
 
-        <div className="mt-8 pt-6 border-t border-gray-200">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Section Navigation</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 max-h-96 overflow-y-auto">
+        <div className="mt-8 pt-6 border-t border-neutral-100">
+          <h3 className="text-sm font-bold text-neutral-950 mb-4 uppercase tracking-widest">Section Navigation</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1.5 max-h-96 overflow-y-auto">
             {sectionTitles.map((title, index) => {
               const isVisible = shouldShowSection(index)
               if (!isVisible) return null
@@ -1609,10 +1610,10 @@ export default function ClientIntakeForm() {
                   key={index}
                   type="button"
                   onClick={() => setCurrentSection(index)}
-                  className={`text-left px-3 py-2 rounded text-sm transition-colors ${
+                  className={`text-left px-3 py-2 rounded-lg text-sm transition-colors ${
                     currentSection === index
-                      ? 'bg-blue-100 text-blue-700 font-medium'
-                      : 'text-gray-600 hover:bg-gray-50'
+                      ? 'bg-neutral-950 text-white font-semibold'
+                      : 'text-neutral-500 hover:bg-neutral-50 hover:text-neutral-950'
                   }`}
                 >
                   {index + 1}. {title}
@@ -1621,12 +1622,12 @@ export default function ClientIntakeForm() {
             })}
           </div>
         </div>
-
       </div>
 
       {/* Calendly inline widget */}
-      <div className="mt-12 bg-white rounded-lg shadow-lg p-6 sm:p-8">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">Schedule a Call</h2>
+      <div className="mt-8 rounded-2xl border border-neutral-200 bg-white p-8">
+        <p className="text-xs font-semibold uppercase tracking-widest text-neutral-400 mb-2">Schedule</p>
+        <h2 className="text-2xl font-extrabold tracking-tight text-neutral-950 mb-6">Book a Strategy Call</h2>
         <div className="calendly-inline-widget" data-url="https://calendly.com/advanicurran/30min" style={{ minWidth: '320px', height: '700px' }}></div>
         <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" />
       </div>

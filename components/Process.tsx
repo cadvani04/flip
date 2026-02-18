@@ -1,89 +1,58 @@
-export default function Process() {
-  const steps = [
-    {
-      number: '01',
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-        </svg>
-      ),
-      title: 'Intake & Strategy Blueprint',
-      description: 'We analyze your current systems, brand, and growth goals.',
-    },
-    {
-      number: '02',
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-        </svg>
-      ),
-      title: 'Infrastructure Buildout',
-      description: 'Development, automations, ERP workflows, and backend systems.',
-    },
-    {
-      number: '03',
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-        </svg>
-      ),
-      title: 'Brand & Creative Identity',
-      description: 'Video, visuals, content pipelines, and messaging.',
-    },
-    {
-      number: '04',
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-        </svg>
-      ),
-      title: 'Sales & Marketing Engine',
-      description: 'Paid, organic, funnels, automation.',
-    },
-    {
-      number: '05',
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-        </svg>
-      ),
-      title: 'Growth & Optimization',
-      description: 'Continuous improvement across every layer.',
-    },
-  ]
+const steps = [
+  {
+    number: '1',
+    title: 'Intake & Strategy Blueprint',
+    description:
+      'We analyze your current systems, brand, and growth goals to build a comprehensive strategy tailored to your business.',
+  },
+  {
+    number: '2',
+    title: 'Infrastructure Buildout',
+    description:
+      'Development, automations, ERP workflows, and backend systems — we architect the technical foundation.',
+  },
+  {
+    number: '3',
+    title: 'Brand & Creative Identity',
+    description:
+      'Video, visuals, content pipelines, and messaging — we craft the narrative that defines your brand.',
+  },
+  {
+    number: '4',
+    title: 'Sales & Marketing Engine',
+    description:
+      'Paid, organic, funnels, automation — we activate every channel and drive measurable growth.',
+  },
+  {
+    number: '5',
+    title: 'Growth & Optimization',
+    description:
+      'Continuous improvement across every layer, backed by data and relentless iteration.',
+  },
+]
 
+export default function Process() {
   return (
-    <section id="process" className="bg-gray-50 py-16 sm:py-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 max-w-3xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Process
+    <section id="process" className="bg-white py-20 sm:py-28">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        {/* Header */}
+        <div className="mb-14">
+          <p className="text-xs font-semibold uppercase tracking-widest text-neutral-400 mb-4">How It Works</p>
+          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-neutral-950 leading-[1.1] max-w-xl mb-4">
+            The smarter agency process.
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-4">
-            Everything we build stacks: no wasted work, no isolated teams.
+          <p className="text-lg text-neutral-500 max-w-xl">
+            Everything we build stacks — no wasted work, no isolated teams.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto relative">
-          {/* Connecting lines for desktop */}
-          <div className="hidden lg:block absolute top-12 left-12 right-12 h-0.5 bg-gray-200"></div>
-          
-          {steps.map((step, index) => (
-            <div key={index} className="relative">
-              <div className="bg-white rounded-xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-200 h-full">
-                {/* Number Badge */}
-                <div className="absolute -top-3 -right-3 w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xs shadow-lg">
-                  {step.number}
-                </div>
-                
-                {/* Icon */}
-                <div className="text-blue-600 mb-3">
-                  {step.icon}
-                </div>
-                
-                {/* Content */}
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{step.title}</h3>
-                <p className="text-gray-600 leading-relaxed text-sm">{step.description}</p>
-              </div>
+
+        {/* Steps */}
+        <div className="grid md:grid-cols-5 gap-0 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-neutral-200 border border-neutral-200 rounded-2xl overflow-hidden">
+          {steps.map((step) => (
+            <div key={step.number} className="bg-white p-7 hover:bg-brand-50 transition-colors duration-150">
+              <div className="text-4xl font-extrabold text-neutral-100 mb-4 leading-none">{step.number}</div>
+              <h3 className="text-sm font-bold text-neutral-950 mb-2 leading-snug">{step.title}</h3>
+              <p className="text-xs text-neutral-500 leading-relaxed">{step.description}</p>
             </div>
           ))}
         </div>
