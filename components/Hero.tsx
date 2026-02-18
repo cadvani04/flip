@@ -42,7 +42,7 @@ export default function Hero() {
 
           {/* Subheadline */}
           <p className="mt-2 text-lg sm:text-xl text-neutral-500 leading-relaxed max-w-2xl mb-10">
-            Flip merges custom software, automation, brand identity, video production, and marketing execution into one seamless infrastructure — from concept to scale.
+            Flip merges custom software, automation, brand identity, video production, and marketing execution into one seamless infrastructure, from concept to scale.
           </p>
 
           {/* CTA Buttons */}
@@ -66,7 +66,7 @@ export default function Hero() {
 
           {/* Social proof micro-line */}
           <p className="mt-8 text-xs text-neutral-400 font-medium tracking-wide">
-            Trusted by founders, operators &amp; growing brands — one partner for everything.
+            Trusted by founders, operators &amp; growing brands. One partner for everything.
           </p>
         </div>
       </div>

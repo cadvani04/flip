@@ -1,5 +1,7 @@
 'use client'
 
+import { useInView } from '@/components/useInView'
+
 const clients = [
   { name: 'Total Fire Protection', sector: 'Industrial Services & Operations', logo: '/clients/total-fire-protection.png' },
   { name: 'Airbnb Expansion Projects', sector: 'Automation, listing ops & growth', logo: '/clients/airbnb.png' },
@@ -10,20 +12,33 @@ const clients = [
 
 export default function Clients() {
   const doubled = [...clients, ...clients]
+  const { ref: headerRef, isVisible: headerVisible } = useInView()
 
   return (
     <section id="clients" className="bg-white py-20 sm:py-28 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-12">
-        <p className="text-xs font-semibold uppercase tracking-widest text-neutral-400 mb-4">Our Clients</p>
-        <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-neutral-950 leading-[1.1] max-w-2xl mb-4">
+
+      {/* ── Header ────────────────────────────────────────── */}
+      <div ref={headerRef} className="max-w-7xl mx-auto px-6 lg:px-8 mb-12">
+        <p
+          className={`reveal-eyebrow text-xs font-semibold uppercase tracking-widest text-neutral-400 mb-4 ${headerVisible ? 'visible' : ''}`}
+        >
+          Our Clients
+        </p>
+        <h2
+          className={`reveal-heading text-4xl sm:text-5xl font-extrabold tracking-tight text-neutral-950 leading-[1.1] max-w-2xl mb-4 ${headerVisible ? 'visible' : ''}`}
+          style={{ transitionDelay: headerVisible ? '0.1s' : '0s' }}
+        >
           Brands we've built systems for.
         </h2>
-        <p className="text-lg text-neutral-500 max-w-xl">
+        <p
+          className={`reveal text-lg text-neutral-500 max-w-xl ${headerVisible ? 'visible' : ''}`}
+          style={{ transitionDelay: headerVisible ? '0.18s' : '0s' }}
+        >
           We work across industries because we build systems, not templates. If you can imagine it, we can build the infrastructure behind it.
         </p>
       </div>
 
-      {/* Scrolling carousel */}
+      {/* ── Scrolling carousel ────────────────────────────── */}
       <div className="relative w-full">
         {/* Left/right fade masks */}
         <div className="pointer-events-none absolute left-0 top-0 h-full w-24 z-10 bg-gradient-to-r from-white to-transparent" />
@@ -57,7 +72,7 @@ export default function Clients() {
         </div>
       </div>
 
-      {/* Bottom tagline */}
+      {/* ── Bottom tagline ────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 mt-12">
         <p className="text-sm text-neutral-400 italic">
           Our versatility is driven by an infrastructure-first approach.

@@ -1,5 +1,7 @@
 'use client'
 
+import { useInView } from '@/components/useInView'
+
 const packages = [
   {
     name: 'Growth Starter',
@@ -62,30 +64,46 @@ const packages = [
 ]
 
 export default function Packages() {
+  const { ref: headerRef, isVisible: headerVisible } = useInView()
+  const { ref: cardsRef, isVisible: cardsVisible } = useInView()
+  const { ref: bottomRef, isVisible: bottomVisible } = useInView()
+
   return (
     <section className="bg-white py-20 sm:py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Header */}
-        <div className="mb-14">
-          <p className="text-xs font-semibold uppercase tracking-widest text-neutral-400 mb-4">Pricing</p>
-          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-neutral-950 leading-[1.1] max-w-xl mb-3">
+
+        {/* ── Header ──────────────────────────────────────── */}
+        <div ref={headerRef} className="mb-14">
+          <p
+            className={`reveal-eyebrow text-xs font-semibold uppercase tracking-widest text-neutral-400 mb-4 ${headerVisible ? 'visible' : ''}`}
+          >
+            Pricing
+          </p>
+          <h2
+            className={`reveal-heading text-4xl sm:text-5xl font-extrabold tracking-tight text-neutral-950 leading-[1.1] max-w-xl mb-3 ${headerVisible ? 'visible' : ''}`}
+            style={{ transitionDelay: headerVisible ? '0.1s' : '0s' }}
+          >
             Choose your growth path.
           </h2>
-          <p className="text-lg text-neutral-500">
+          <p
+            className={`reveal text-lg text-neutral-500 ${headerVisible ? 'visible' : ''}`}
+            style={{ transitionDelay: headerVisible ? '0.18s' : '0s' }}
+          >
             Transparent pricing, powerful results.
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-6">
-          {packages.map((pkg) => (
+        {/* ── Cards — staggered scale-in ───────────────────── */}
+        <div ref={cardsRef} className="grid md:grid-cols-3 gap-6">
+          {packages.map((pkg, i) => (
             <div
               key={pkg.name}
-              className={`relative rounded-2xl border p-8 flex flex-col ${
+              className={`reveal-scale relative rounded-2xl border p-8 flex flex-col ${
                 pkg.highlight
                   ? 'border-neutral-950 bg-neutral-950 text-white'
                   : 'border-neutral-200 bg-white text-neutral-950'
-              }`}
+              } ${cardsVisible ? 'visible' : ''}`}
+              style={{ transitionDelay: cardsVisible ? `${i * 0.12}s` : '0s' }}
             >
               {pkg.highlight && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
@@ -97,12 +115,12 @@ export default function Packages() {
 
               {/* Package name + price */}
               <div className="mb-6">
-                <p className={`text-xs font-semibold uppercase tracking-widest mb-3 ${pkg.highlight ? 'text-neutral-400' : 'text-neutral-400'}`}>
+                <p className="text-xs font-semibold uppercase tracking-widest text-neutral-400 mb-3">
                   {pkg.name}
                 </p>
                 <div className="flex items-baseline gap-1 mb-3">
                   <span className="text-4xl font-extrabold tracking-tight">{pkg.price}</span>
-                  <span className={`text-sm font-medium ${pkg.highlight ? 'text-neutral-400' : 'text-neutral-400'}`}>{pkg.period}</span>
+                  <span className="text-sm font-medium text-neutral-400">{pkg.period}</span>
                 </div>
                 <p className={`text-sm leading-relaxed ${pkg.highlight ? 'text-neutral-400' : 'text-neutral-500'}`}>
                   {pkg.description}
@@ -124,7 +142,9 @@ export default function Packages() {
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className={`text-sm ${pkg.highlight ? 'text-neutral-300' : 'text-neutral-600'}`}>{feature}</span>
+                    <span className={`text-sm ${pkg.highlight ? 'text-neutral-300' : 'text-neutral-600'}`}>
+                      {feature}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -146,8 +166,11 @@ export default function Packages() {
           ))}
         </div>
 
-        {/* Bottom note */}
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-6 rounded-2xl border border-neutral-200 bg-brand-50 px-8 py-6">
+        {/* ── Bottom note ─────────────────────────────────── */}
+        <div
+          ref={bottomRef}
+          className={`reveal mt-10 flex flex-col sm:flex-row items-center justify-between gap-6 rounded-2xl border border-neutral-200 bg-brand-50 px-8 py-6 ${bottomVisible ? 'visible' : ''}`}
+        >
           <p className="text-neutral-600 text-sm">Not sure which package is right for you?</p>
           <a
             href="https://calendly.com/advanicurran/30min"

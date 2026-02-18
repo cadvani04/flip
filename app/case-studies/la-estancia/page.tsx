@@ -140,7 +140,7 @@ export default function LaEstanciaCaseStudy() {
               <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-8 border border-purple-200">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">2. Distribution at scale</h3>
                 <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                  Posting wasn't the bottleneck — distribution was.
+                  Posting wasn't the bottleneck. Distribution was.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed mb-4">
                   We implemented a system to:
@@ -278,7 +278,7 @@ export default function LaEstanciaCaseStudy() {
                 "Quote placeholder from owner/staff about the results and impact."
               </p>
               <p className="text-base font-semibold text-gray-900">
-                — Restaurant Owner/Staff Name
+                Restaurant Owner/Staff Name
               </p>
             </div>
           </div>
