@@ -188,3 +188,26 @@ body {
 .reveal-line.visible {
   transform: scaleX(1);
 }
+
+/* ── Wheel service carousel ── */
+/* Pulse ring that expands outward when a new service activates */
+.wheel-pulse {
+  animation: wheel-pulse 0.75s cubic-bezier(0, 0.7, 0.4, 1) forwards;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes wheel-pulse {
+  0%   { transform: scale(1);   opacity: 0.7; }
+  100% { transform: scale(3);   opacity: 0; }
+}
+
+/* Glow burst behind active node */
+.wheel-glow {
+  animation: wheel-glow 0.6s cubic-bezier(0, 0.7, 0.4, 1) forwards;
+  transform-box: fill-box;
+  transform-origin: center;
+}@keyframes wheel-glow {
+  0%   { transform: scale(1);   opacity: 0.25; }
+  100% { transform: scale(2.2); opacity: 0; }
+}

@@ -172,14 +172,17 @@ export default function LaEstanciaCaseStudy() {
               </div>
             </div>
 
-            {/* Video Thumbnail Placeholder */}
-            <div className="bg-gray-100 rounded-xl p-12 border-2 border-dashed border-gray-300 text-center mb-8">
-              <svg className="w-16 h-16 mx-auto text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <p className="text-gray-600 font-medium">Video Thumbnail Placeholder</p>
-              <p className="text-sm text-gray-500 mt-2">Example: Short-form content showcase</p>
+            {/* TikTok Embed */}
+            <div className="flex justify-center mb-8">
+              <blockquote
+                className="tiktok-embed"
+                cite="https://www.tiktok.com/@laestanciasteakhousemn/video/7559975856140045598"
+                data-video-id="7559975856140045598"
+                style={{ maxWidth: '605px', minWidth: '325px' }}
+              >
+                <section />
+              </blockquote>
+              <script async src="https://www.tiktok.com/embed.js" />
             </div>
           </div>
         </div>

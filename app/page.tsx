@@ -7,6 +7,7 @@ import Packages from '@/components/Packages'
 import Clients from '@/components/Clients'
 import WhyChoose from '@/components/WhyChoose'
 import Process from '@/components/Process'
+import CaseStudies from '@/components/CaseStudies'
 import Team from '@/components/Team'
 import Mission from '@/components/Mission'
 import CTA from '@/components/CTA'
@@ -24,6 +25,7 @@ export default function Home() {
       <Clients />
       <WhyChoose />
       <Process />
+      <CaseStudies />
       <Team />
       <Mission />
       <CTA />

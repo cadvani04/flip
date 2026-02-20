@@ -20,6 +20,7 @@ export default function Header() {
             { label: 'About', href: '#about' },
             { label: 'Services', href: '#services' },
             { label: 'Clients', href: '#clients' },
+            { label: 'Case Studies', href: '#case-studies' },
             { label: 'Process', href: '#process' },
             { label: 'Team', href: '#team' },
           ].map((link) => (
@@ -70,6 +71,7 @@ export default function Header() {
             { label: 'About', href: '#about' },
             { label: 'Services', href: '#services' },
             { label: 'Clients', href: '#clients' },
+            { label: 'Case Studies', href: '#case-studies' },
             { label: 'Process', href: '#process' },
             { label: 'Team', href: '#team' },
           ].map((link) => (
